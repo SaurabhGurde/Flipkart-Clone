@@ -1,7 +1,7 @@
 import axios from "axios";
 import * as actionType from "../constants/productConstants";
  
-const URL = 'http://localhost:8000';
+const URL = 'https://flipkart-clone-server-uayy.onrender.com';
 
 export const getProducts = () => async(dispatch)=>{
     try {
@@ -17,7 +17,7 @@ export const getProducts = () => async(dispatch)=>{
 export const getProductDetails = (id) => async (dispatch) => {
     try {
         dispatch({ type: actionType.GET_PRODUCT_DETAILS_REQUEST });
-        const { data } = await axios.get(`http://localhost:8000/product/${id}`);
+        const { data } = await axios.get(`https://flipkart-clone-server-uayy.onrender.com/product/${id}`);
         
         dispatch({ type: actionType.GET_PRODUCT_DETAILS_SUCCESS, payload: data });
 
